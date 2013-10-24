@@ -1,0 +1,17 @@
+---
+title: Working for Change
+layout: default
+---
+
+<h1>Working for Change</h1>
+<h4 class="subtitle">Experiences while building an experiential agency.</h4>
+
+<ul class="nav nav-pills">
+  <% for document in @getCollection('posts').toJSON(): %>
+    <li typeof="sioc:Page" about="<%= document.url %>"
+      class="<%= 'active'if @document.url is document.url %>">
+      <a href="<%= document.url %>" property="dc:title"><h4><%= document.title %></h4></a>
+      <div class="post-preview"><%- @getPreview(document) %></div>
+    </li>
+  <% end %>
+</ul>

@@ -1,0 +1,18 @@
+<html>
+<head>
+  <title><%= @document.title %> | The Blerg</title>
+  <%- @getBlock("meta").toHTML() %>
+  <%- @getBlock("styles").add(["/css/github.css", "/css/bootstrap.min.css", "/css/ext.css"]).toHTML() %>
+</head>
+<body>
+  <a href="/" class="back hide-text">back</a>
+  <h1 class="post-title"><%= @document.title %></h1>
+  <div id="actions">
+    <a href="#plussed" class="check hide-text" data-id="<%= @document.title %>">plus</a>
+    <a href="#exed" class="x hide-text" data-id="<%= @document.title %>">xed</a>
+  </div>
+  <%- @content %>
+  <a href="/" class="read-more">Back</a>
+  <%- @getBlock("scripts").add(["/js/jquery.min.js", "/js/bootstrap.min.js", "/js/google.js", "/js/mixpanel.js", "/js/tracking.js"]).toHTML() %>
+</body>
+</html>

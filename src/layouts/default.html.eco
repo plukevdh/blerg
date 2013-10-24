@@ -1,0 +1,11 @@
+<html>
+<head>
+    <title><%= @document.title %> | The Blerg</title>
+    <%- @getBlock("meta").toHTML() %>
+    <%- @getBlock("styles").add(["/css/github.css", "/css/bootstrap.min.css", "/css/ext.css"]).toHTML() %>
+</head>
+<body>
+    <%- @content %>
+    <%- @getBlock("scripts").add(["/js/jquery.min.js", "/js/bootstrap.min.js", "/js/google.js"]).toHTML() %>
+</body>
+</html>
